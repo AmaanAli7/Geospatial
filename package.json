@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "geospatial-frontend",
   "version": "0.1.0",
   "private": true,
@@ -56,4 +57,9 @@
     "not dead",
     "not ie 11"
   ]
+=======
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+>>>>>>> 0ee47d4bce392352a8ade91cf3ca5012a7c53c1c
 }
