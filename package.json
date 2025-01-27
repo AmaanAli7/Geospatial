@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist -r https://github.com/AmaanAli7/Geospatial.git"
+,
     "start": "vue-cli-service serve",
     "dev": "concurrently \"npm run serve\" \"cd ../geospatial-backend && npm start\"",
     "serve": "vue-cli-service serve",
