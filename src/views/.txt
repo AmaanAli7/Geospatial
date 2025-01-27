@@ -1,0 +1,30 @@
+instruct in details step by step how to make my app run perfectly with frontend and backend connected and working routes
+
+<template>
+    <div>
+      <FileUpload />
+      <Map :datasets="datasets" />
+    </div>
+  </template>
+  
+  <script>
+  import FileUpload from '../components/FileUpload.vue';
+  import Map from '../components/MapView.vue';
+  import axios from 'axios';
+  
+  export default {
+    components: { FileUpload, Map },
+    data() {
+      return { datasets: [] };
+    },
+    async mounted() {
+      const response = await axios.get('http://localhost:5000/map/files', {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')} `},
+      });
+      this.datasets = response.data.map(file => ({
+        name: file.name,
+        data: JSON.parse(file.data),
+      }));
+    },
+  };
+  </script>
